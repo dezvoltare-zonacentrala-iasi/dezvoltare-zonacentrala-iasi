@@ -9,10 +9,10 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --blue:       #1a6eb5;
-      --blue-dark:  #12508a;
-      --blue-light: #e8f2fb;
-      --dark:       #1e2a36;
+      --blue:       #e41e2f;
+      --blue-dark:  #b01020;
+      --blue-light: #fde8ea;
+      --dark:       #252638;
       --text:       #1c2430;
       --muted:      #5a6472;
       --line:       #dde2ea;
@@ -58,38 +58,22 @@
       gap: 16px;
     }
 
-    .brand {
+    .brand-logo {
       display: flex;
       align-items: center;
-      gap: 12px;
-      color: var(--white);
     }
 
-    .brand-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: var(--blue);
-      display: grid;
-      place-items: center;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #fff;
-      flex-shrink: 0;
-    }
-
-    .brand-text strong {
+    .brand-logo img {
+      height: 48px;
+      width: auto;
       display: block;
-      font-size: 1rem;
-      line-height: 1.2;
+      background: var(--white);
+      padding: 4px 10px;
+      border-radius: 3px;
+      transition: opacity .2s;
     }
 
-    .brand-text span {
-      display: block;
-      font-size: 0.8rem;
-      color: #9fb3c8;
-      margin-top: 2px;
-    }
+    .brand-logo:hover img { opacity: 0.85; }
 
     .header-nav {
       display: flex;
@@ -151,7 +135,7 @@
 
     /* ── HERO ── */
     .hero {
-      background: linear-gradient(160deg, #0d1d2e 0%, #1a3a5c 55%, #0f2540 100%);
+      background: linear-gradient(160deg, #1a1b2e 0%, #252638 55%, #1a1b2e 100%);
       padding: 64px 0 56px;
       text-align: center;
       position: relative;
@@ -347,45 +331,75 @@
     /* ── PARTNER CARDS ── */
     .partner-list {
       display: grid;
-      gap: 10px;
+      gap: 12px;
       margin: 16px 0 24px;
     }
 
     .partner-item {
       display: grid;
-      grid-template-columns: 32px 1fr;
-      gap: 12px;
-      align-items: start;
-      padding: 14px 16px;
-      background: #f7f9fc;
+      grid-template-columns: 110px 1fr;
+      gap: 0;
+      align-items: stretch;
+      background: #fff;
       border: 1px solid var(--line);
       border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+      transition: box-shadow .2s;
     }
 
-    .partner-num {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: var(--blue);
-      color: #fff;
-      display: grid;
-      place-items: center;
-      font-size: 0.85rem;
-      font-weight: 700;
-      flex-shrink: 0;
+    .partner-item:hover {
+      box-shadow: 0 3px 14px rgba(0,0,0,0.1);
+    }
+
+    .partner-logo-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 12px;
+      background: #f7f9fc;
+      border-right: 1px solid var(--line);
+      min-height: 100px;
+    }
+
+    .partner-logo-cell img {
+      max-height: 80px;
+      max-width: 90px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+      transition: opacity .2s;
+    }
+
+    .partner-logo-cell:hover img { opacity: 0.8; }
+
+    .partner-info {
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .partner-info strong {
       display: block;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       color: var(--text);
-      margin-bottom: 2px;
+      margin-bottom: 5px;
+      line-height: 1.3;
     }
 
     .partner-info span {
       font-size: 0.83rem;
       color: var(--muted);
       font-style: italic;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 560px) {
+      .partner-item { grid-template-columns: 80px 1fr; }
+      .partner-logo-cell { padding: 12px 8px; }
+      .partner-logo-cell img { max-height: 60px; max-width: 68px; }
     }
 
     /* ── FINANCE TABLE ── */
@@ -628,13 +642,9 @@
   <header class="site-header">
     <div class="wrap">
       <div class="header-inner">
-        <div class="brand">
-          <div class="brand-icon">IS</div>
-          <div class="brand-text">
-            <strong>Municipiul Iași</strong>
-            <span>Proiecte în implementare</span>
-          </div>
-        </div>
+        <a href="https://www.primaria-iasi.ro" target="_blank" rel="noopener noreferrer" class="brand-logo">
+          <img src="https://www.primaria-iasi.ro/portal/images/logo.svg" alt="Primăria Municipiului Iași">
+        </a>
         <nav class="header-nav">
           <a href="#comunicat" class="active">Comunicat</a>
           <a href="#parteneri">Parteneri</a>
@@ -749,7 +759,9 @@
 
                 <div class="partner-list">
                   <div class="partner-item">
-                    <div class="partner-num">1</div>
+                    <a href="https://www.primaria-iasi.ro" target="_blank" rel="noopener noreferrer" class="partner-logo-cell">
+                      <img src="Sigla-Primaria-Municipiului-Iasi-cu-scris-564x1024-1.png" alt="Primăria Municipiului Iași">
+                    </a>
                     <div class="partner-info">
                       <strong>Municipiul Iași – Lider</strong>
                       <span>Reabilitarea și modernizarea spațiilor publice prin amenajarea spațiului verde
@@ -757,14 +769,18 @@
                     </div>
                   </div>
                   <div class="partner-item">
-                    <div class="partner-num">2</div>
+                    <a href="https://www.icc.ro" target="_blank" rel="noopener noreferrer" class="partner-logo-cell">
+                      <img src="https://www.icc.ro/wp-content/uploads/2023/10/logo-cj-iasi-01-263x300.png" alt="Consiliul Județean Iași">
+                    </a>
                     <div class="partner-info">
                       <strong>Consiliul Județean Iași – Partener</strong>
                       <span>Reabilitarea și modernizarea Filarmonicii Moldova Iași.</span>
                     </div>
                   </div>
                   <div class="partner-item">
-                    <div class="partner-num">3</div>
+                    <a href="https://mmb.ro" target="_blank" rel="noopener noreferrer" class="partner-logo-cell">
+                      <img src="https://mmb.ro/sites/default/files/logo_mmb_0_0.png" alt="Arhiepiscopia Iașilor">
+                    </a>
                     <div class="partner-info">
                       <strong>Arhiepiscopia Iașilor – Partener</strong>
                       <span>Restaurarea și valorificarea culturală și turistică a Catedralei Mitropolitane
