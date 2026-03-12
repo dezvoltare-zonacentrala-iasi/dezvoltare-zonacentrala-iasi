@@ -111,6 +111,44 @@
       text-decoration: none;
     }
 
+    /* ── EU TOP BAR ── */
+    .eu-topbar {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+      padding: 12px 0;
+    }
+
+    .eu-topbar-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .eu-topbar-strip .logo-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 64px;
+    }
+
+    .eu-topbar-strip img {
+      max-height: 60px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+      transition: opacity .2s;
+    }
+
+    .eu-topbar-strip a:hover img { opacity: 0.8; }
+
+    @media (max-width: 560px) {
+      .eu-topbar-strip { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .eu-topbar-strip .logo-cell { min-height: 48px; }
+      .eu-topbar-strip img { max-height: 44px; }
+    }
+
     /* ── HERO ── */
     .hero {
       background: linear-gradient(160deg, #0d1d2e 0%, #1a3a5c 55%, #0f2540 100%);
@@ -650,6 +688,34 @@
     </div>
   </header>
 
+  <!-- EU LOGOS TOP BAR (vizibile fără scroll – conform MIV) -->
+  <div class="eu-topbar">
+    <div class="wrap">
+      <div class="eu-topbar-strip">
+        <div class="logo-cell">
+          <a href="https://european-union.europa.eu/index_ro" target="_blank" rel="noopener noreferrer">
+            <img src="cofinantat-deUE-1.png" alt="Cofinanțat de Uniunea Europeană">
+          </a>
+        </div>
+        <div class="logo-cell">
+          <a href="https://gov.ro" target="_blank" rel="noopener noreferrer">
+            <img src="logo-GOV.png" alt="Guvernul României">
+          </a>
+        </div>
+        <div class="logo-cell">
+          <a href="https://regionordest.ro" target="_blank" rel="noopener noreferrer">
+            <img src="sigla_regio-NE.png" alt="Regio Nord-Est">
+          </a>
+        </div>
+        <div class="logo-cell">
+          <a href="https://www.adrnordest.ro" target="_blank" rel="noopener noreferrer">
+            <img src="Logo-adrne-1.png" alt="ADR Nord-Est">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- HERO -->
   <div class="hero">
     <div class="wrap">
@@ -930,7 +996,7 @@
     <div class="wrap">
       <p class="footer-eu-note">
         Pentru informații detaliate despre celelalte programe cofinanțate de Uniunea Europeană,
-        vă invităm să vizitați <a href="https://mfe.gov.ro/" target="_blank" rel="noopener noreferrer">mfe.gov.ro</a>.
+        vă invităm să vizitați <a href="https://mfe.gov.ro/" target="_blank" rel="noopener noreferrer">https://mfe.gov.ro/</a>.
       </p>
       <div class="footer-grid">
         <div class="footer-links">
@@ -938,7 +1004,9 @@
           <a href="https://www.facebook.com/Regio.NordEst.ro" target="_blank" rel="noopener noreferrer">www.facebook.com/Regio.NordEst.ro</a>
         </div>
         <div class="footer-badge">
-          <img src="logo-aproape-de-tine-300x54.webp" alt="Aproape de tine">
+          <a href="https://www.regionordest.ro" target="_blank" rel="noopener noreferrer">
+            <img src="logo-aproape-de-tine-300x54.webp" alt="Aproape de tine">
+          </a>
         </div>
       </div>
     </div>
