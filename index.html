@@ -564,6 +564,35 @@
       border-top: 1px solid var(--line);
     }
 
+    /* ── SIDEBAR FUNDING LOGOS ── */
+    .sidebar-funding-logos {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .funding-logo-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 10px;
+      border-right: 1px solid var(--line);
+      transition: background .2s;
+    }
+
+    .funding-logo-link:last-child { border-right: none; }
+    .funding-logo-link:hover { background: #f7f9fc; }
+
+    .funding-logo-link img {
+      max-height: 52px;
+      max-width: 80px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
     .program-tag .tag-dot {
       width: 10px;
       height: 10px;
@@ -920,15 +949,15 @@
           <!-- Logo sidebar -->
           <div class="sidebar-card">
             <div class="sidebar-card-head">Finanțat prin</div>
-            <div class="sidebar-card-body" style="display:flex;flex-direction:column;gap:14px;align-items:center;padding:18px;">
-              <a href="https://regionordest.ro" target="_blank" rel="noopener noreferrer">
-                <img src="sigla_regio-NE.png" alt="Regio Nord-Est" style="max-height:64px;width:auto;">
+            <div class="sidebar-funding-logos">
+              <a href="https://regionordest.ro" target="_blank" rel="noopener noreferrer" class="funding-logo-link">
+                <img src="sigla_regio-NE.png" alt="Regio Nord-Est">
               </a>
-              <a href="https://www.adrnordest.ro" target="_blank" rel="noopener noreferrer">
-                <img src="Logo-adrne-1.png" alt="ADR Nord-Est" style="max-height:64px;width:auto;">
+              <a href="https://www.adrnordest.ro" target="_blank" rel="noopener noreferrer" class="funding-logo-link">
+                <img src="Logo-adrne-1.png" alt="ADR Nord-Est">
               </a>
-              <a href="https://european-union.europa.eu/index_ro" target="_blank" rel="noopener noreferrer">
-                <img src="cofinantat-deUE-1.png" alt="Cofinanțat de Uniunea Europeană" style="max-height:64px;width:auto;">
+              <a href="https://european-union.europa.eu/index_ro" target="_blank" rel="noopener noreferrer" class="funding-logo-link">
+                <img src="cofinantat-deUE-1.png" alt="Cofinanțat de Uniunea Europeană">
               </a>
             </div>
           </div>
